@@ -47,13 +47,23 @@ public class MainActivity extends AppCompatActivity {
                   Iterable<DataSnapshot>childs = dataSnapshot.getChildren();
                   for (DataSnapshot snap : childs){
 
-                   //   System.out.println("Name :"+snap.child("name").getValue().toString());
+
 
                       Github git = snap.getValue(Github.class);
-                      System.out.println(git.getId()+" "+ git.getFull_name()+" "+git.getWatchers());
+                     // System.out.println(git.getId()+" "+ git.getFull_name()+" "+git.getWatchers());
+                     vals.add(git);
                   }
 
 
+
+
+                  System.out.println("sixe :" +vals.size());
+
+
+
+                  for (int i=0; i<vals.size();i++){
+                      System.out.println(vals.get(i).getId()+""+vals.get(i).getWatchers()+""+vals.get(i).getFull_name());
+}
 
 
             }
